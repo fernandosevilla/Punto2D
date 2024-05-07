@@ -32,37 +32,25 @@ public class Punto2D {
         this.y = y;
     }
 
-    public boolean distintos(Punto2D a, Punto2D b){
+    public boolean distintos(Punto2D a, Punto2D b) {
         return !(a.equals(b));
     }
-    
+
     public double distancia(Punto2D a, Punto2D b) {
-        return Math.sqrt(Math.pow((b.x - a.x),2) + Math.pow((b.y - a.y), 2));
+        return Math.sqrt(Math.pow((b.x - a.x), 2) + Math.pow((b.y - a.y), 2));
     }
-    
+
     public double calcularPendiente(Punto2D a, Punto2D b) {
         return (b.y - a.y) / (b.x - b.x);
     }
-    
+
     @Override
     public boolean equals(Object otro) {
-        // Verifica si el objeto pasado es un Punto2D
-        if (otro instanceof Punto2D otroPunto) {
-            // Comparar las coordenadas
-            return this.x == otroPunto.x && this.y == otroPunto.y;
+        if (otro instanceof Punto2D) { // verifica si el objeto que se pasa como parametro es un Punto2D
+            Punto2D otroPunto = (Punto2D) otro; // Convertir Object a Punto2D
+
+            return this.x == otroPunto.x && this.y == otroPunto.y; // se comparan coordenadas
         }
         return false;
     }
-    
-//    @Override
-//    public boolean equals(Object otro) {
-//        // Verifica si el objeto pasado es un Punto2D
-//        if (otro instanceof Punto2D) {
-//            // Convertir el objeto a Punto2D
-//            Punto2D otroPunto = (Punto2D) otro;
-//            // Comparar las coordenadas
-//            return this.x == otroPunto.x && this.y == otroPunto.y;
-//        }
-//        return false;
-//    }
 }
