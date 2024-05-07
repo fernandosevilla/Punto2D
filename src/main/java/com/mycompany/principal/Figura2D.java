@@ -9,6 +9,6 @@ package com.mycompany.principal;
 */
 
 public abstract class Figura2D {
-    public abstract double area(Figura2D figura);
-    public abstract double perimetro(Figura2D figura);
+    public abstract double area();
+    public abstract double perimetro();
 }

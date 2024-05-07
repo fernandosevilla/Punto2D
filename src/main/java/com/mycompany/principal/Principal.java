@@ -9,8 +9,14 @@ package com.mycompany.principal;
 */
 
 public class Principal {
-
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Punto2D puntoA = new Punto2D(42, 2);
+        Punto2D puntoB = new Punto2D(4, 6);
+        Punto2D puntoC = new Punto2D(1, 3);
+
+        Triangulo triangulo = new Triangulo(puntoA, puntoB, puntoC);
+
+        System.out.println("Información del triángulo:");
+        System.out.println(triangulo.toString());
     }
 }

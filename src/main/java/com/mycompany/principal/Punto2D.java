@@ -32,25 +32,37 @@ public class Punto2D {
         this.y = y;
     }
 
-    public boolean distintos(Punto2D a, Punto2D b) {
-        return !(a.equals(b));
+    public static boolean distintos(Punto2D a, Punto2D b) {
+        return !(a.equals(b)); // si son distintos da true, si son iguales false
     }
 
-    public double distancia(Punto2D a, Punto2D b) {
-        return Math.sqrt(Math.pow((b.x - a.x), 2) + Math.pow((b.y - a.y), 2));
+    public static double distancia(Punto2D a, Punto2D b) {
+        return Math.sqrt(Math.abs(Math.pow((b.getX() - a.getX()), 2)) + Math.abs(Math.pow((b.getY() - a.getY()), 2)));
     }
 
-    public double calcularPendiente(Punto2D a, Punto2D b) {
-        return (b.y - a.y) / (b.x - b.x);
+    public static double calcularPendiente(Punto2D a, Punto2D b) {
+        double calculoX = b.getX() - b.getX();
+
+        if (calculoX == 0) {
+            return Double.POSITIVE_INFINITY;
+        } else {
+            return (b.getY() - a.getY()) / calculoX;
+        }
     }
 
     @Override
     public boolean equals(Object otro) {
         if (otro instanceof Punto2D) { // verifica si el objeto que se pasa como parametro es un Punto2D
-            Punto2D otroPunto = (Punto2D) otro; // Convertir Object a Punto2D
+            Punto2D otroPunto = (Punto2D) otro; // se convierte otro a Punto2D
 
-            return this.x == otroPunto.x && this.y == otroPunto.y; // se comparan coordenadas
+            return this.getX() == otroPunto.getX() && this.getY() == otroPunto.getY(); // se comparan coordenadas
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "(" + x + ", " + y + ")";
+    }
+
 }
