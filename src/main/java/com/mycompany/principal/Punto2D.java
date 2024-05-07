@@ -6,7 +6,8 @@ package com.mycompany.principal;
 
 /**
  * @author Fer
- */
+*/
+
 public class Punto2D {
 
     private double x, y;

@@ -6,9 +6,9 @@ package com.mycompany.principal;
 
 /**
  * @author Fer
- */
-public class Triangulo extends Figura2D {
+*/
 
+public class Triangulo extends Figura2D {
     enum Tipo {
         NO_TRIANGULO, EQUILATERO, ISOSCELES, ESCALENO;
     }
@@ -83,12 +83,12 @@ public class Triangulo extends Figura2D {
 
     @Override
     public String toString() {
-        return "Punto A: " + getA() + "\n"
-                + "Punto B: " + getB() + "\n"
-                + "Punto C: " + getC() + "\n"
-                + "Perímetro: " + perimetro() + "\n"
-                + "Área: " + area() + "\n"
-                + "Tipo de triángulo: " + tipo;
+        return "Punto A: " + getA() + "\n" +
+               "Punto B: " + getB() + "\n" +
+               "Punto C: " + getC() + "\n" +
+               "Perímetro: " + perimetro() + "\n" +
+               "Área: " + area() + "\n" +
+               "Tipo de triángulo: " + tipo;
     }
 
     private Tipo tipoTriangulo() {
